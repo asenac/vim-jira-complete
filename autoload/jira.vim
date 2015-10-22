@@ -190,6 +190,10 @@ function! jira#_get_password(username)
     call inputrestore()
     echohl None
   endif
+  let cache_password = jira#lh_option_get('jiracomplete_cache_password', 0)
+  if cache_password == 1
+      let g:jiracomplete_password = password
+  endif
   return password
 endfunction
 

@@ -37,8 +37,8 @@ def jira_complete(url, user, pw, need_retry=True):
         api_url = "%s/rest/api/2/search?%s" % (url, query)
         response = requests.get(api_url, headers=headers)
 
-    print "api_url: ", api_url
-    print "headers: ", headers
+    # print "api_url: ", api_url
+    # print "headers: ", headers
     if response.status_code == requests.codes.ok:
         jvalue = json.loads(response.content)
         issues = jvalue['issues']
